@@ -5,7 +5,7 @@ from components.simple_read import SimpleReadPage
 from components.crud import CRUDPage
 from components.simple_viz import SimpleVizPage
 
-page_title="Hellofresh streamlit test"
+page_title="Hellofresh test app"
 page_icon=":coconut:"
 layout="centered"
 
@@ -25,16 +25,16 @@ if __name__ == "__main__":
 
     selected = option_menu(
         menu_title=None,
-        options=["simple-read", "simple-viz", "crud"],
+        options=["live-plan", "wavemaster-pt", "assembly-tracker"],
         orientation="horizontal"
     )
 
     match selected:
-        case "simple-read":
+        case "live-plan":
             SimpleReadPage().render()
-        case "simple-viz":
+        case "wavemaster-pt":
             SimpleVizPage().render()
-        case "crud":
+        case "assembly-tracker":
             CRUDPage().render()
         case other:
             st.write("Option not recognized")
